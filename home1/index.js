@@ -1,12 +1,12 @@
 const express = require('express');
-
 const webServer = express();
+const hostInfo  = require('../config');
+
 webServer.use(express.urlencoded({extended:true}));
-const port = 8080;
 
 webServer.get('/home1', (req, res) => {
     res.send(`
-        <form action="http://138.197.219.113:8080/form" method="get">
+        <form action="${hostInfo.host}/form" method="get">
             <input type="text" name="firstname">
             <input type="text" name="lastname">
             <input type="submit" value="send data">
@@ -17,7 +17,7 @@ webServer.get('/home1', (req, res) => {
 webServer.get('/form', (req, res) => {
     if(req.query.firstname === ''){
         res.send(`
-            <form action="http://138.197.219.113:8080/form" method="get">
+            <form action="${hostInfo.host}/form" method="get">
                 <label>
                     <input type="text" name="firstname">
                     enter your firstname
@@ -29,7 +29,7 @@ webServer.get('/form', (req, res) => {
     }
     else if(req.query.lastname === ''){
         res.send(`
-            <form action="http://138.197.219.113:8080/form" method="get">
+            <form action="${hostInfo.host}/form" method="get">
                 <input type="text" name="firstname" value=${req.query.firstname}>
                 <label>
                     <input type="text" name="lastname">
@@ -44,5 +44,5 @@ webServer.get('/form', (req, res) => {
     }
 });
 
-webServer.listen(port);
+webServer.listen(hostInfo.port);
 console.log('server started');

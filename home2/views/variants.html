@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label{
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        label > span{
+            display: inline-block;
+            width: 70px;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid black;
+            padding: 10px 30px;
+            display: inline-block;
+            color: #000;
+            margin-top: 20px;
+        }
+        a:hover{
+            background-color: #666;
+            color: #fff;
+
+        }
+    </style>
+</head>
+<body>
+<form action="$$$vote$$$" id="variant">
+    <fieldset>
+        <legend>Какой язык самый лучший?</legend>
+        <label>
+            <span>JS</span><input type="radio" value="JS" name="lang">
+        </label> <br>
+        <label>
+            <span>PHP</span><input type="radio" value="PHP" name="lang">
+        </label><br>
+        <label>
+            <span>Swift</span><input type="radio" value="Swift" name="lang">
+        </label><br>
+        <label>
+            <span>Kotlin</span><input type="radio" value="Kotlin" name="lang">
+        </label><br>
+        <label>
+            <span>Java</span><input type="radio" value="Java" name="lang">
+        </label><br>
+        <label>
+            <span>Flutter</span><input type="radio" value="Flutter" name="lang" >
+        </label><br>
+        <label>
+            <span>Dart</span><input type="radio" value="Dart" name="lang">
+        </label><br>
+        <input type="submit" value="send">
+    </fieldset>
+</form>
+
+<a href="/">go back</a>
+
+</body>
+</html>
